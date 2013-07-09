@@ -4,7 +4,14 @@ var fs=require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-	fs.readFileSync('index.html',function(err,data){
+	var options={
+		flags: 'r',
+		encoding: null,
+		fd: null,
+		mode: 0666,
+		autoClose: true
+	};
+	fs.readFileSync('index.html',options,function(err,data){
 		if (err) throw err;
 		response.send(new Buffer(data).toString());
 	});
