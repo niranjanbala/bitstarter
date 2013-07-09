@@ -13,6 +13,7 @@ app.get('/', function(request, response) {
 	};*/
 	fs.readFileSync('index.html','utf8',function(err,data){
 		if (err) throw err;
+		console.log(data);
 		//response.send(new Buffer(data).toString());
 	});
 	response.send("Hello");
