@@ -11,7 +11,7 @@ app.get('/', function(request, response) {
 		mode: 0666,
 		autoClose: true
 	};*/
-	fs.readFileSync('index.html','utf8',function(err,data){
+	fs.readFileSync('./index.html','utf8',function(err,data){
 		if (err) throw err;
 		//response.send(new Buffer(data).toString());
 	});
