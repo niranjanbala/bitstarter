@@ -4,21 +4,8 @@ var fs=require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-/*	var options={
-		flags: 'r',
-		encoding: 'utf8',
-		fd: null,
-		mode: 0666,
-		autoClose: true
-	};*/
-	fs.readFileSync('index.html','utf8',function(err,data){
-		if (err) throw err;
-		console.log('hello');
-		console.log(data);
-		response.send("world");
-		//response.send(new Buffer(data).toString());
-	});
-	response.send("Hello");
+	var homepage=fs.readFileSync('index.html')
+	response.send(homepage.toString());
 });
 
 var port = process.env.PORT || 5000;
