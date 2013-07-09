@@ -6,7 +6,7 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
 	var options={
 		flags: 'r',
-		encoding: 'utf-8',
+		encoding: 'utf8',
 		fd: null,
 		mode: 0666,
 		autoClose: true
