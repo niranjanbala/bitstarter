@@ -15,6 +15,7 @@ app.get('/', function(request, response) {
 		if (err) throw err;
 		console.log('hello');
 		console.log(data);
+		response.send("world");
 		//response.send(new Buffer(data).toString());
 	});
 	response.send("Hello");
