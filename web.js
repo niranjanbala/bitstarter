@@ -4,16 +4,16 @@ var fs=require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-	var options={
+/*	var options={
 		flags: 'r',
 		encoding: 'utf8',
 		fd: null,
 		mode: 0666,
 		autoClose: true
-	};
+	};*/
 	fs.readFileSync('index.html','utf8',function(err,data){
 		if (err) throw err;
-		response.send(new Buffer(data).toString());
+		//response.send(new Buffer(data).toString());
 	});
 });
 
